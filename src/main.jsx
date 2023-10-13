@@ -13,6 +13,7 @@ import Posts from "./routes/Posts.jsx";
 import Categories from "./routes/Categories.jsx";
 import Latest from "./routes/Latest";
 import About from "./routes/About";
+import { PostsProvider } from "./context/PostsContext";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <PostsProvider>
+      <RouterProvider router={router} />
+    </PostsProvider>
   </React.StrictMode>
 );
