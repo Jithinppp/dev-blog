@@ -7,7 +7,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: "Lora", serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 /* Remove default margin */
@@ -91,4 +91,38 @@ select {
     #ff5858,
     #f857a6
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@media (max-width: 350px) {
+  .subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    border: none;
+  }
+  .subscribe-form > input {
+    border: 2px solid rgba(128, 128, 128, 0.411);
+    padding: 0.8rem;
+    border-radius: 0.375rem;
+  }
+}
+
+.btnDisabled {
+  cursor: not-allowed;
+}
+.loader {
+  animation: blinking 2s infinite ease-in-out;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

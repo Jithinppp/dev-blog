@@ -1,8 +1,10 @@
-import { useContext, useEffect, useState } from "react";
-import { PostsContext } from "../context/PostsContext";
-import PostCard from "../components/PostCard/PostCard";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchLatestPosts } from "../Utils/post.functions";
+
+import PostCard from "../components/PostCard/PostCard";
+import { FiArrowUpRight } from "react-icons/fi";
+import Loader from "../components/Loader/Loader";
 
 function Latest() {
   const [posts, setPosts] = useState([]);
@@ -11,10 +13,15 @@ function Latest() {
   }, []);
 
   return (
-    <div>
-      <h1>Latest posts</h1>
-      {posts?.length > 0 && (
-        <div>
+    <div className="max-w-[80%] m-auto">
+      <div className="flex justify-between mb-5 items-center">
+        <h4 className="font-bold underline text-lg">Latest posts</h4>
+        <Link to={"/api/posts"} className="text-xl">
+          <FiArrowUpRight />
+        </Link>
+      </div>
+      {posts?.length > 0 ? (
+        <div className="flex flex-col gap-4">
           {posts.map((post) => (
             <PostCard
               key={post.id}
@@ -24,8 +31,9 @@ function Latest() {
             />
           ))}
         </div>
+      ) : (
+        <Loader />
       )}
-      <Link to={"/api/posts"}>See more posts</Link>
     </div>
   );
 }

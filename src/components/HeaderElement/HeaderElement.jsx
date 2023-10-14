@@ -5,13 +5,10 @@ function HeaderElement() {
   return (
     <>
       <div className="gradientBackgroundDiv"></div>
-      <header className="flex justify-between my-4 px-4">
+      <header className="flex justify-between my-7 px-4">
         <Logo size="text-2xl" />
-        <nav className="">
+        <nav className="hidden md:block">
           <ul className="flex gap-6 font-semibold">
-            <li className="hover:underline">
-              <Link to={"/"}>Home</Link>
-            </li>
             <li className="hover:underline">
               <Link to={"/subscribe"}>Subscribe</Link>
             </li>

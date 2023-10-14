@@ -3,7 +3,7 @@ import Logo from "../Logo/Logo";
 
 function FooterElement() {
   return (
-    <footer className="bg-black min-h-[200px] px-8 py-9 text-white ">
+    <footer className="bg-black min-h-[200px] px-8 py-9 text-white mt-8">
       <div className="flex justify-evenly">
         <div>
           <Logo size={"text-2xl"} />

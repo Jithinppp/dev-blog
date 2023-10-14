@@ -19,7 +19,7 @@ export const fetchAllPosts = async (page) => {
       }/posts?pagination[page]=${page}&pagination[pageSize]=10`
     );
     const data = await res.json();
-    return data.data;
+    return data;
   } catch (error) {
     throw new Error(error);
   }
